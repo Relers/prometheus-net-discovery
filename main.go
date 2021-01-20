@@ -240,7 +240,8 @@ func writeFileSDConfig(config *Config, path string, addresses []Address) error {
                         Targets: []string{net.JoinHostPort(v.IP, v.Port)},
                         Labels: map[string]string{
                                 "subnet": v.Subnet,
-                                "instance":   v.Hostname,
+                                "instance":   v.IP,
+                                "hostname": v.Hostname,
                                 "job": v.Exporter,
                                 "env": "prod",
                         },
